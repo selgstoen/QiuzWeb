@@ -1,0 +1,1 @@
+{"version":3,"file":"quizService.js","sourceRoot":"","sources":["quizService.ts"],"names":["QuizService","QuizService.constructor","QuizService.getData"],"mappings":"AAAA;IAAA,WAAsB,QAAc;;IAEpC;QAAAA;;AAKCA,QAHGA,gCAAAA;YACIE,OAAOA,IAAIA,CAACA,GAAGA,CAACA,UAAUA,CAACA,CAACA;QAChCA,CAACA;QACLF;AAACA,IAADA,CAACA,IAAA;IACD,IAAI,QAAQ,GAAiB,IAAI,WAAW,CAAC,CAAC,CAAC;;;GAC7B"}
