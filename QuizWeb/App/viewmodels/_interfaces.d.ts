@@ -1,3 +1,7 @@
+interface IViewModel {
+    activate(settings);
+}
+
 interface IQuizViewModel {
     id: number;
     name: string;

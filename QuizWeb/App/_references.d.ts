@@ -7,3 +7,5 @@
 /// <reference path="../Scripts/typings/underscore/underscore.d.ts" />
 ///// <reference path="../Scripts/typings/bootstrap/bootstrap.d.ts" />
 ///// <reference path="../Scripts/typings/typedExtensions.d.ts" />
+
+/// <reference path="viewModels/_interfaces.d.ts" />

@@ -11,7 +11,9 @@ namespace QuizWeb.Controllers
         public IEnumerable<Quiz> Get()
         {
             var repository =new QuizRepository();
-            return repository.GetAll();
+            var quizList =  repository.GetAll();
+
+            return quizList;
         }
     }
 }

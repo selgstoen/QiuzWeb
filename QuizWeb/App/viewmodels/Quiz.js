@@ -5,12 +5,7 @@ define(["require", "exports", 'services/quizService'], function(require, exports
         function quiz() {
             var _this = this;
             this.quiz = ko.observable();
-            this.currentItemIndex = ko.observable(0);
-            this.currentItem = ko.computed(function () {
-                if (!_this.quiz())
-                    return null;
-                return _this.quiz().quizItems[_this.currentItemIndex()];
-            }, this);
+            this.questions = ko.observableArray();
             this.name = ko.computed(function () {
                 if (!_this.quiz())
                     return 'Quiz not found';
@@ -24,8 +19,8 @@ define(["require", "exports", 'services/quizService'], function(require, exports
                 var target = _.find(quizList, function (q) {
                     return q.id === _this.id;
                 });
-                _this.currentItemIndex(0);
                 _this.quiz(target);
+                _this.questions(target.questions);
             });
         };
 

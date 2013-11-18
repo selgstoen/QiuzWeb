@@ -14,12 +14,12 @@ namespace Core.Repository
         {
             return new List<Quiz>
             {
-                new Quiz{Id=1,Name="Math quiz",Description = "An easy quiz", QuizItems = GetQuizItems()},
-                new Quiz{Id=2,Name="Second Quiz",Description = "A hard quiz"}
+                new Quiz{Id=1,Name="Math quiz",Description = "An easy quiz", QuizItems = GetQuizItemsEasy()},
+                new Quiz{Id=2,Name="Music quiz",Description = "A hard quiz", QuizItems = GetQuizItemsHard()}
             };
         }
 
-        private IList<QuizItem> GetQuizItems()
+        private IList<QuizItem> GetQuizItemsEasy()
         {
             var quizItems = new List<QuizItem>();
             quizItems.Add(new QuizItem {Question = "Which is max?", Alternatives = new List<QuizItemAlternative>
@@ -37,6 +37,34 @@ namespace Core.Repository
                 new QuizItemAlternative{Answer="1",IsCorrect=true},
                 new QuizItemAlternative{Answer = "100", IsCorrect = false},
                 new QuizItemAlternative{Answer = "23", IsCorrect = false}
+            }
+            });
+
+            return quizItems;
+        }
+
+        private IList<QuizItem> GetQuizItemsHard()
+        {
+            var quizItems = new List<QuizItem>();
+            quizItems.Add(new QuizItem
+            {
+                Question = "Who is best",
+                Alternatives = new List<QuizItemAlternative>
+            {
+                new QuizItemAlternative{Answer="Zappa",IsCorrect=true},
+                new QuizItemAlternative{Answer = "Iggy Pop", IsCorrect = false},
+                new QuizItemAlternative{Answer = "Kiss", IsCorrect = false}
+            }
+            });
+
+            quizItems.Add(new QuizItem
+            {
+                Question = "Who plays guitar?",
+                Alternatives = new List<QuizItemAlternative>
+            {
+                new QuizItemAlternative{Answer="Richie Blackmore",IsCorrect=true},
+                new QuizItemAlternative{Answer = "Ken Hensly", IsCorrect = false},
+                new QuizItemAlternative{Answer = "Jim Morrison", IsCorrect = false}
             }
             });
 
