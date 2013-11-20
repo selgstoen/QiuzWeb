@@ -4,20 +4,20 @@ define(["require", "exports"], function(require, exports) {
             var _this = this;
             this.quizItem = ko.observable();
             this.answers = ko.observableArray();
+            //question = ko.computed<string>(() => {
+            //    if (!this.quizItem())
+            //        return 'question not found';
+            //    return 'Question one';
+            //});
             this.question = ko.computed(function () {
                 if (!_this.quizItem())
                     return 'question not found';
-                return 'Question one';
-            });
+                return _this.quizItem().question;
+            }, this);
         }
-        //question = ko.computed<string>(() => {
-        //    if (!this.quizItem())
-        //        return 'question not found';
-        //    return this.quizItem().question;
-        //}, this);
-        QuizItemViewModel.prototype.activate = function (quizItem) {
-            this.quizItem(quizItem);
-            this.answers(quizItem.alternatives);
+        QuizItemViewModel.prototype.activate = function (settings) {
+            this.quizItem(settings.question);
+            this.answers(settings.question.alternatives);
         };
         return QuizItemViewModel;
     })();

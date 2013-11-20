@@ -13,14 +13,14 @@ define(["require", "exports", 'services/quizService'], function(require, exports
             });
         }
         quiz.prototype.updateData = function () {
-            var _this = this;
+            var self = this;
             return quizService.getData().then(function (data) {
                 var quizList = data;
                 var target = _.find(quizList, function (q) {
-                    return q.id === _this.id;
+                    return q.id === self.id;
                 });
-                _this.quiz(target);
-                _this.questions(target.questions);
+                self.quiz(target);
+                self.questions(target.quizItems);
             });
         };
 

@@ -2,6 +2,7 @@
     <label data-bind="text: name"></label>
     
     <!--<label data-bind="text: currentItem() && currentItem().question"></label>-->
-    <div data-bind="widget: { kind: 'quizItem', questions: questions(0).questsion}"></div>
-
+    <!-- ko foreach: questions -->
+    <div data-bind="widget: { kind: 'quizItem', question: $data}"></div>
+    <!-- /ko-->
 </section>

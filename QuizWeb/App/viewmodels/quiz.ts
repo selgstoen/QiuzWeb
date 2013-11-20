@@ -11,13 +11,13 @@ class quiz {
     });
 
     private updateData() {
-       
+        var self = this;
         return quizService.getData()
             .then(data => {
                 var quizList = data;
-                var target = _.find(quizList, q => q.id === this.id);
-                this.quiz(target);
-                this.questions(target.questions);
+                var target = _.find(quizList, q => q.id === self.id);
+                self.quiz(target);
+                self.questions(target.quizItems);
                 });
     }
 
